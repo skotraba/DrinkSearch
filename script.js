@@ -9,12 +9,26 @@ const container= document.querySelector('.container')
 function search(callback) {
 
     let drink = document.getElementById('drink').value
-    console.log(drink)
-    callback(drink)
+    let ingredient = document.getElementById('ingredient').value
+    
+
+
+    if (drink) {
+        console.log(drink)
+        var searchURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`
+    }
+
+    if (ingredient) {
+        console.log(ingredient)
+        var searchURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`
+    }
+
+    callback(searchURL)
+    
 }
 
 
-function getData(searchDrink){
+function getData(url){
 
     let hasPrevious = document.querySelectorAll('div.card')
     if(hasPrevious.length != 0) {
@@ -23,9 +37,8 @@ function getData(searchDrink){
         }))
     }
 
-    var searchURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchDrink}`
-    console.log(searchURL)
-    fetch(searchURL)
+    console.log(url)
+    fetch(url)
     .then((result) => {
     return result.json()
     })
