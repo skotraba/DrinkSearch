@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <div class='section'>
+        <div class='search'>
+            <h1 class='header'>Search Drink by Name</h1>
+            <input type='text' id='drink'  onkeydown = "if (event.keyCode == 13)
+                document.getElementById('btn').click()">
+            <button id='btn' type='submit' onclick='search(getData)'>Submit
+            </button>
+        </div>
+        <div class='search'>
+            <h1 class='header'>Search Drinks by Ingredient</h1>
+            <input type='text' id='ingredient'  onkeydown = "if (event.keyCode == 13)
+                document.getElementById('btn2').click()">
+            <button id='btn2' type='submit' onclick='search(getData)'>Submit
+            </button>
+        </div>
+    </div>
+    
+    
+    <div class='container'></div>
+        
+
+    <script src='script.js'></script>
+</body>
+</html>
